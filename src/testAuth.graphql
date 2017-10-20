@@ -1,0 +1,15 @@
+type AdditionPayload {
+  sum: Int!
+}
+
+extend type Query {
+  testAuth(a: Int! b: Int!): AdditionPayload
+}
+
+# type AdditionPayload {
+#   sum: Int!
+# }
+#
+# extend type Mutation {
+#   add(a: Int! b: Int!): AdditionPayload
+#}

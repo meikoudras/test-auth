@@ -1,0 +1,25 @@
+types: ./types.graphql
+functions:
+  testAuth:
+    handler:
+      code:
+        src: ./src/testAuth.js
+    type: resolver
+    schema: ./src/testAuth.graphql
+  userUpdate:
+    handler:
+      code:
+        src: ./src/userUpdate.js
+    type: operationBefore
+    operation: User.update
+permissions:
+- operation: File.read
+- operation: File.create
+- operation: File.update
+- operation: File.delete
+- operation: User.read
+- operation: User.create
+- operation: User.update
+- operation: User.delete
+rootTokens:
+- anonymous-auth-provider
